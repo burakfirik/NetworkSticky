@@ -1,0 +1,3 @@
+= simple_fields_for @shared_note do |f|
+  = f.input :email, label: "Share this note via email address"
+  = link_to "Share", "javascript:void(0);", :class => "btn btn-success", :onclick => "createSharedNote();"

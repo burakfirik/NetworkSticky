@@ -1,0 +1,12 @@
+%h3 Shared Notes
+%hr/
+.row-fluid
+  - if @notes.empty?
+    .span8.offset2.notes.pagination-centered
+      .well
+        %strong No notes have been shared to you.
+  - else
+    - for note in @notes
+      = render 'notes/note', :note => note
+
+= render 'notes/modal'

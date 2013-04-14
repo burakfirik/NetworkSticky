@@ -1,0 +1,29 @@
+.span4.notes
+  .well
+    %strong= note.name
+<<<<<<< HEAD
+    %br/
+    %em= "by #{note.user.email}"
+=======
+>>>>>>> 36a2f3959683644bcb532aad8e692ce805cf3d76
+    .clearfix
+    .btn-group.pull-right
+      = link_to "#noteModal", :class => "btn btn-mini btn-shownote", :role => "button", :data => {:toggle => "modal", :id => note.id} do
+        %i.icon-zoom-in
+<<<<<<< HEAD
+      - if note.user == current_user
+        = link_to "#noteModal", :class => "btn btn-mini btn-editnote", :role => "button", :data => {:toggle => "modal", :id => note.id} do
+          %i.icon-edit
+        = link_to note_path(note), :class => "btn btn-mini", :data => {:confirm => "Are you sure?"}, :method => :delete do
+          %i.icon-trash
+    .clearfix
+    %br/
+    - if note.user != current_user
+      %em.label.pull-right= "by #{note.user.email}"
+=======
+      = link_to "#noteModal", :class => "btn btn-mini btn-editnote", :role => "button", :data => {:toggle => "modal", :id => note.id} do
+        %i.icon-edit
+      = link_to note_path(note), :class => "btn btn-mini", :data => {:confirm => "Are you sure?"}, :method => :delete do
+        %i.icon-trash
+>>>>>>> 36a2f3959683644bcb532aad8e692ce805cf3d76
+    .clearfix

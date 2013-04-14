@@ -1,0 +1,7 @@
+@import "bootstrap";
+body { padding-top: 60px; }
+@import "bootstrap-responsive";
+
+.notes:nth-child(4n+4) {
+  margin-left: 0;
+}

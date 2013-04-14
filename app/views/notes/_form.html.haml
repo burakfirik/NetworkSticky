@@ -1,0 +1,18 @@
+= simple_nested_form_for(@note) do |f|
+  - if @note.errors.any?
+    #error_explanation
+      %h2
+        = "#{pluralize(@note.errors.count, "error")} prohibited this note from being saved:"
+      %ul
+        - @note.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  = f.fields_for :contents do |c|
+    = c.input :description
+    = c.link_to_remove "Remove Content"
+  = f.link_to_add "Add New Content", :contents
+  .actions
+    = f.submit

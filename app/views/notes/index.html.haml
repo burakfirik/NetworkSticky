@@ -1,0 +1,16 @@
+%h3 My Notes
+%hr/
+.row-fluid
+  .span12.pagination-centered
+    = link_to new_note_path do
+      %button.btn Add Note
+%br/
+.row-fluid
+  - for note in @notes
+    = render 'notes/note', :note => note
+  - unless @notes.empty?
+    .span4.notes.pagination-centered
+      .well
+        = link_to new_note_path do
+          %button.btn Add Note
+= render 'notes/modal'

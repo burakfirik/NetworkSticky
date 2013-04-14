@@ -1,0 +1,21 @@
+%button.btn.btn-navbar{:type => "button", "data-toggle" => "collapse", "data-target" => ".nav-collapse"}
+  - 3.times do
+    %span.icon-bar
+= link_to "Home", root_path, :class => 'brand'
+.nav-collapse.collapse.pull-right
+  %ul.nav
+    - if user_signed_in?
+      %li
+<<<<<<< HEAD
+        = link_to "Welcome #{current_user.email}!", "#"
+      %li
+=======
+>>>>>>> 36a2f3959683644bcb532aad8e692ce805cf3d76
+        = link_to('Account', edit_user_registration_path)
+      %li
+        = link_to('Logout', destroy_user_session_path, :method=>'delete')
+    - else
+      %li
+        = link_to('Login', new_user_session_path)
+      %li
+        = link_to('Sign up', new_user_registration_path)
